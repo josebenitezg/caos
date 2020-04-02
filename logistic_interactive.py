@@ -1,5 +1,5 @@
 """
-    Written by Jonny Hyman, 2020
+    Escrito originalmente por Jonny Hyman, 2020
         www.jonnyhyman.com
         www.github.com/jonnyhyman
 
@@ -286,7 +286,7 @@ def cobweb_plot(plt, idx=-1,
 def series_plot(plt, y_vals, idx=100, r=0, xall=False):
 
     plt.clear()
-    plt.setTitle("Population vs Time, growth rate: {:4.2f}".format(r))
+    plt.setTitle("Población vs Tiempo, ratio de crecimiento: {:4.2f}".format(r))
 
     t = np.arange(len(y_vals))
     y = y_vals[:idx]
@@ -394,15 +394,15 @@ class Controls(QWidget):
         self.l1 = QVBoxLayout()
         self.l1.setAlignment(Qt.AlignTop)
 
-        self.cobweb_box = QtWidgets.QCheckBox('🕸️ Plot', parent=self)
+        self.cobweb_box = QtWidgets.QCheckBox('🕸️ Gráfico', parent=self)
         self.l1.addWidget(self.cobweb_box)
         self.cobweb_box.setChecked(0)
 
-        self.series_box = QtWidgets.QCheckBox("📈 Plot", parent=self)
+        self.series_box = QtWidgets.QCheckBox("📈 Gráfico", parent=self)
         self.l1.addWidget(self.series_box)
         self.series_box.setChecked(1)
 
-        self.bifurc_box = QtWidgets.QCheckBox("❄️ Plot", parent=self)
+        self.bifurc_box = QtWidgets.QCheckBox("❄️ Gráfico", parent=self)
         self.l1.addWidget(self.bifurc_box)
         self.bifurc_box.setChecked(0)
 
@@ -413,7 +413,7 @@ class Controls(QWidget):
 
         self.animlabel = QLabel(self)
         self.l2.addWidget(self.animlabel)
-        self.animlabel.setText("Animation FPS")
+        self.animlabel.setText("FPS animación")
 
         self.animrate = QtWidgets.QSlider(self)
         self.animrate.setOrientation(Qt.Horizontal)
@@ -427,7 +427,7 @@ class Controls(QWidget):
 
         self.sub1 = QHBoxLayout()
         self.sub1.setAlignment(Qt.AlignLeft)
-        self.rate_txt = QLabel("Rate", self)
+        self.rate_txt = QLabel("Ratio", self)
 
         self.rate_box = QtWidgets.QDoubleSpinBox(self)
         self.rate_box.setSingleStep(0.01)
@@ -453,7 +453,7 @@ class Controls(QWidget):
         self.ipoptxt = QLabel(self)
         self.sub2.addWidget(self.ipoptxt)
         self.ipoptxt.setAlignment(Qt.AlignHCenter)
-        self.ipoptxt.setText("Initial\nPop.")
+        self.ipoptxt.setText("Pobl.\nInicial.")
 
         self.ipop_box = QtWidgets.QDoubleSpinBox()
         self.ipop_box.setSingleStep(0.01)
@@ -490,11 +490,11 @@ class Controls(QWidget):
         self.l5.addWidget(self.animb)
         self.animb.setFixedWidth(self.animlabel.width())
 
-        self.reset = QtWidgets.QPushButton('Reset', parent=self)
+        self.reset = QtWidgets.QPushButton('Reseteo', parent=self)
         self.l5.addWidget(self.reset)
         self.reset.setFixedWidth(self.animlabel.width())
 
-        self.clear = QtWidgets.QPushButton('Clear', parent=self)
+        self.clear = QtWidgets.QPushButton('Clean', parent=self)
         self.clear.setCheckable(False)
         self.clear.setFixedWidth(self.animlabel.width())
         self.l5.addWidget(self.clear)
@@ -577,21 +577,21 @@ class Widget(QWidget):
 
         self.win = pg.GraphicsWindow()
 
-        self.setWindowTitle("Logistic Map 🤯")
+        self.setWindowTitle("Mapa logístico 🤯")
         self.horizontalLayout.addWidget(self.win)
 
         self.plots = [
-                        self.win.addPlot(col=1, title="Cobwebb",
-                                        labels={'left':"Population Next",
-                                                'bottom':"Population"}),
+                        self.win.addPlot(col=1, title="Diagrama de Verhulst",
+                                        labels={'left':"Población Sig.",
+                                                'bottom':"Población"}),
 
-                        self.win.addPlot(col=2, title="Population vs Time",
-                                        labels={'left':"Population",
-                                                'bottom':"Time"}),
+                        self.win.addPlot(col=2, title="Población vs Tiempo",
+                                        labels={'left':"Población",
+                                                'bottom':"Tiempo"}),
 
-                        self.win.addPlot(col=3, title="Bifurcations",
-                                        labels={'left':"Equilibrium Population",
-                                                'bottom':"Rates"}),
+                        self.win.addPlot(col=3, title="Bifurcaciones",
+                                        labels={'left':"Equilibrio de Poblaciones",
+                                                'bottom':"Ratio"}),
         ]
 
         self.timer = QtCore.QTimer()
@@ -631,7 +631,7 @@ class Widget(QWidget):
         if self.animate:
             print('Animation play')
             self.update_plot()
-            self.controls.animb.setText('Pause')
+            self.controls.animb.setText('Pausa')
         else:
             print("Animation pause")
             self.timer.stop()
