@@ -56,10 +56,10 @@ Aquí podemos ver el conjunto de Mandelbrot en 3D y las iteraciones en el eje Z.
 
 La visualización final tiene un render de 1000x1000x1000 voxeles.
 
-Voxel: unidad cúbica que representa una figura tridimensional.
+Voxel: es la unidad cúbica que compone un objeto tridimensional
 ----
 
-## Logistic Map Zoom
+## Zoom del Mapa logístico.
 `python logistic_zoom.py`
 ![Logistic Map Zoom GIF](https://github.com/jonnyhyman/Chaos/blob/master/images/logistic-zoom.gif?raw=true)
 
