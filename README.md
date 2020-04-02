@@ -2,7 +2,7 @@
 #### Visualización de una conexión de la teoría del caos, fractales y mapas lógicos.
 ###### Código escrito originalmente por [Jonny Hyman](https://www.jonnyhyman.com), 2020
 
-Este codigo fue desarrollado para [Este video de Youtube de Veritasium](https://www.youtube.com/watch?v=ovJcsL7vyrk)
+Este codigo fue desarrollado para [Este video de Youtube de Veritasium](https://www.youtube.com/watch?v=EOvLhZPevm0)
 
 Esto no es una librería, esto es una traducción y algunas mejoras dentro de la aplicación.
 
